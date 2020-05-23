@@ -60,6 +60,9 @@
     text-align: right;
 }
 
+
+
+
 .modal-header {
     background: #000A12;
     color: floralwhite; }
@@ -67,19 +70,32 @@
       color: floralwhite; }
   
   .modal-body {
-    background: #000A12; }
+    background: #000A12; 
+    text-align: center;}
 
 
-    .form-control {
-        width: 600px;
+  
+ .form-control {
+        width:300x;
         fill: none;
         background-color: transparent;
         border: none;
-        border-bottom: 2px solid white;
+        border-bottom: 1px solid white;
+       
         font-size: 18px;
         margin-bottom: 16px;
+        align-items: center;
     }
 
+    form{
+        display: inline-block;
+        width: 300px;
+    }
+    
+
+   
+ 
+  
    
 .btn-default
 {
@@ -96,7 +112,25 @@ border-color: #CFCFCF;
 
 
 
-.butbot{
-    position:absolute;
+.parent-div{
+  position: relative;    
+    }
+    
+    .child-div{
+    
+    width: 350px;
+    height: 90px;
+    
+    margin-right: 1%;
+    position: absolute;
     bottom:0;
-}
+    right: 0em;
+    
+    }
+
+  
+
+
+    .right {
+        float: right;
+    }
