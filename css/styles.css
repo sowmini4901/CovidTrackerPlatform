@@ -1,3 +1,9 @@
+.jumbotron{
+    height: 300px;
+    background-image: url("../img/jumbotron-2.jpg");
+}
+
+
 .row-header{
     margin:0px auto;
     padding:0px;
@@ -36,12 +42,23 @@
 .font{
     font-size: 175px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 .font-reach{
     font-size: 175px;
     font-weight: bold;
     text-align: right;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-smile{
+    font-size: 175px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 
@@ -65,13 +82,14 @@
 
 .modal-header {
     background: #000A12;
-    color: floralwhite; }
+    color: gray; }
     .modal-header .close {
       color: floralwhite; }
   
   .modal-body {
     background: #000A12; 
-    text-align: center;}
+    text-align: center;
+    height: 500px;}
 
 
   
@@ -80,7 +98,7 @@
         fill: none;
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid gray;
        
         font-size: 18px;
         margin-bottom: 16px;
@@ -90,6 +108,7 @@
     form{
         display: inline-block;
         width: 300px;
+        
     }
     
 
@@ -134,3 +153,33 @@ border-color: #CFCFCF;
     .right {
         float: right;
     }
+
+
+    .form-font{
+        color: #CFCFCF;
+    }
+
+    .navbar-custom{
+        color: #000A12;
+    }
+
+    .navbar{
+        color:  color: #000A12;
+    }
+
+
+
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        color: #588c7e;
+        font-family: monospace;
+        font-size: 10px;
+        text-align: left;
+        }
+        th {
+        background-color: #588c7e;
+        color: white;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2}

@@ -1,8 +1,3 @@
-<?php
-ini_set('display_errors', '1');
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +10,6 @@ ini_set('display_errors', '1');
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
-
-        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <title>project_mk1</title>
 </head>
 
@@ -33,7 +26,7 @@ ini_set('display_errors', '1');
               <ul class="navbar-nav mr-auto">
             
                 <li class="nav-item active"><a class="nav-link" href="#"> Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="./"> About</a></li>
+                <li class="nav-item"><a class="nav-link" href="./aboutus.html"> About</a></li>
                
                 <li class="nav-item"><a class="nav-link" href="./contactus.html">Contact</a></li>
               </ul>
@@ -75,25 +68,7 @@ ini_set('display_errors', '1');
                 </div>
                 <div class="modal-body">
                   
-                    <form  method="POST">
-
-
-                        <div class="form-group">
-                                
-                            <select class="form-control" name="category" id="category"  required>
-                                <option selected hidden value="">Category</option>
-                                <option value="design">Design</option>
-                                <option value="art">Art</option>
-                                <option value="music">Music</option>
-                                <option value="programming">Programming</option>
-                                <option value="accounting">Accounting</option>
-                                <option value="transport">Transport</option>
-                                <option value="marketing">Marketing</option>
-                                <option value="others">Others</option>
-                                
-                            </select>
-                          </div>
-
+                    <form>
                         <div class="row text-center">
                             <div class="col">
                               <input type="text" class="form-control" name="name" placeholder="Name" required>
@@ -103,35 +78,40 @@ ini_set('display_errors', '1');
                         
                         <div class="row"> 
                             <div class="col">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" placeholder="password" required>
                           </div>
                         </div>
                         
-                        
-
-                           
-                            
-
-                            
-                            <div class="row  text-center">
+                            <div class="row"> 
                                 <div class="col">
-                                  <input type="text" class="form-control" name ="portfolio" placeholder="Link to your portfolio" required>
-                                </div>
+                                <input type="text" class="form-control" name="value" placeholder="Value you can add" maxlength="30" required>
+                              </div>
                             </div>
 
                             <div class="row text-center">
                                 <div class="col">
-                                  <input type="phone" class="form-control" name="contact" placeholder="Contact No." required>
+                                  <input type="text" class="form-control" name="category" placeholder="Category" required>
+                                </div>
+                            </div>
+                           
+                            <div class="row text-center">
+                                <div class="col">
+                                  <input type="phone" class="form-control" name="phone" placeholder="Contact No." required>
                                 </div>
                             </div>
                           
                             <div class="row  text-center">
                                 <div class="col">
-                                  <input type="email" class="form-control" name="email" placeholder="Email Id" required>
+                                  <input type="email" class="form-control" name="email" placeholder="email Id" required>
                                 </div>
                             </div>
 
-                            
+                            <div class="row  text-center">
+                                <div class="col">
+                                  <input type="url" class="form-control" name ="link" placeholder="Link to your portfolio" required>
+                                </div>
+                            </div>
+                        
                        
                        
                          <div class="form-group row">
@@ -140,7 +120,7 @@ ini_set('display_errors', '1');
                                 <button type="button" class="btn btn-secondary btn-sm ml-auto align-self-center" data-dismiss="modal">Cancel</button>
                                            
                                
-                                <button type="submit" name="difference" class="btn btn-outline-light btn-sm ml-1">
+                                <button type="submit" class="btn btn-outline-light btn-sm ml-1">
                                     Add
                                 </button>
                             </div>
@@ -158,80 +138,10 @@ ini_set('display_errors', '1');
 
 
 
-    <?php
-
-if (isset($_POST['difference'])){
 
 
 
-$category = $_POST['category'];
-$name = $_POST['name'];
-$password = $_POST['password'];
-$portfolio = $_POST['portfolio'];
-$contact =  $_POST['contact'];
-$email = $_POST['email'];
-
-
-if (!empty($category) || !empty($name) || !empty($password) || !empty($portfolio) || !empty($contact) || !empty($email)){
-    $host = "localhost";
-    $dbUsername = "root";
-    $dbPassword = "";
-    $dbname = "volunteer";  // see the name of the database
-    
-    //create connection
-    $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
-        
-    if(mysqli_connect_error()){
-        die('Connect Error('.mysqli_connect_errno().')'. mysqli_connect_error());
-
-    }else{
-        $SELECT = "SELECT email From register Where email = ? Limit 1";
-        $INSERT = "INSERT Into register(category,name,password,portfolio,contact,email) values(?, ?, ?, ?, ?, ?)";
-
-        //prepare statement
-
-        $stmt = $conn->prepare($SELECT);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->bind_result($email);
-        $stmt->store_result();
-        $rnum = $stmt->num_rows;
-
-        if($rnum==0)
-        {
-            $stmt->close();
-
-            $stmt=$conn->prepare($INSERT);
-            $stmt->bind_param("ssssis",$category,$name,$password,$portfolio,$contact,$email);
-            $stmt->execute();
-            echo "New record inserted successfully";
-
-        } 
-        else{
-            echo "Someone already registered using this email";
-        }
-        $stmt->close();
-        $conn->close();
-
-    }
-
-}else {
-    echo "All fields are required";
-    die();
-}
-
-
-
-}
-
-?>
-
-
-    
-
-
-
-    <div id="retrieveModal" class="modal fade" role="dialog">
+    <div id="reachoutModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg " role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -242,39 +152,100 @@ if (!empty($category) || !empty($name) || !empty($password) || !empty($portfolio
                 </div>
                 <div class="modal-body">
                   
-                      <div class="row">
-                          <div class="col-sm-12">
-                    <table>
-                        <tr>
-                        <th>Category</th>
-                        <th>Name</th>
-                        <th>Portfolio</th>
-                        <th>email</th>
-                        </tr>
-                        <?php
-                        $conn = mysqli_connect("localhost", "root", "", "volunteer");
-                        // Check connection
-                        if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                        }
-                        $sql = "SELECT category, name, portfolio, email FROM register";
-                        
-                        $result = $conn->query($sql);
-                        
-                        if ($result->num_rows > 0) {
-                        // output data of each row
-                        while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["category"]. "</td><td>" . $row["name"] . "</td><td>". $row["portfolio"] . "</td><td>"
-                        . $row["email"]. "</td></tr>";
-                        }
-                        echo "</table>";
-                        } else { echo "0 results"; }
-                        $conn->close();
-                        ?>
-                        </table>
+                    <form action="hospital_handler.php" method="POST">
+                        <div class="row text-center">
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="Name" name="patientname" required>
+                            </div>
                         </div>
-                    </div>
-              
+                        
+                            <div class="row"> 
+                                <div class="col">
+                                <input type="text" class="form-control"  placeholder="Last Name" name="lastname" required>
+                              </div>
+                            </div>
+
+                            <div class="row"> 
+                                <div class="col">
+                                <input type="number" class="form-control"  placeholder="Age" name="age" required>
+                              </div>
+                            </div>
+
+                                                    
+                             
+                             <div class="form-group">
+                                
+                                <select class="form-control" name="hospital" id="hospital" size="5" required>
+                                    <option selected hidden value="">Select Hospital</option>
+                                    <option value="yashodaHospital">Yashoda Hospital</option>
+                                    <option value="apolloHospital">Apollo Hospital</option>
+                                    <option value="mamathaHospital">Mamatha Hospital</option>
+                                    <option value="maxHospital">Max Hospital</option>
+                                    <option value="vasanHospital">Vasan Eye Care Hospital</option>
+                                    <option value="prasadHospital">Prasad Neuro Hospital</option>
+                                    <option value="kamineniHospital">Kamineni hospital</option>
+                                    <option value="sunshineHospital">Sunshine Hospital</option>
+                                    <option value="legendHospital">Legend Hospital</option>
+                                    <option value="asianHospital">Asian Hospital</option>
+                                </select>
+                              </div>
+                           
+                       
+
+                            <div class="row text-center">
+                                <div class="col">
+                                  <input type="text" class="form-control" placeholder="Department" name="department" required>
+                                </div>
+                            </div>
+                           
+                            <div class="row"> 
+                                <div class="col">
+                                <input type="phone" class="form-control"  placeholder="Contact No." name="phone" required>
+                              </div>
+                            </div>
+
+                            <div class="row"> 
+                                <div class="col">
+                                <input type="email" class="form-control"  placeholder="email id" name="email" required>
+                              </div>
+                            </div>
+
+                            
+                            <div class="row">
+                                
+                                <div class="col">
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="m">
+                                        <label class="form-check-label form-font" for="inlineRadio1">Male</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="f">
+                                        <label class="form-check-label form-font" for="inlineRadio2">Female</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="o">
+                                        <label class="form-check-label form-font" for="inlineRadio3">Other</label>
+                                      </div>
+                                                                                                                 
+                                </div>
+                             </div>
+                           
+                                                    
+                                              
+                         <div class="form-group row">
+                            <div class="col-sm-10 offset-sm-2">
+                                
+                                <button type="button" class="btn btn-secondary btn-lg ml-auto align-self-center" data-dismiss="modal">Cancel</button>
+                                           
+                               
+                                <button type="submit" class="btn btn-default btn-lg ml-1" value="submit">
+                                   Make Appointment
+                                </button>
+                            </div>
+                        </div>
+                    
+                    </form>
+                
                     
                 </div>
 
@@ -309,8 +280,7 @@ if (!empty($category) || !empty($name) || !empty($password) || !empty($portfolio
 
 
 
-
-       <div class="container-fluid">
+    <div class="container-fluid">
 
         <div class="row row-content">
             <div class="col-12 col-sm-4 col-md-8">
@@ -364,17 +334,9 @@ if (!empty($category) || !empty($name) || !empty($password) || !empty($portfolio
             
         </div>
 
-
-
-           
-       
-
-
-
-
         <div class="row row-content">
             <div class=" d-none d-sm-block col-12 col-sm-4 col-md-3">
-                <h1 class="font-smile">add a<br> SMILE</h1>
+                <h1 class="font">add a<br> SMILE</h1>
             </div>
             
         </div>
@@ -435,10 +397,8 @@ if (!empty($category) || !empty($name) || !empty($password) || !empty($portfolio
 });
 
 $("#reachOutButton").click(function(){
-    $('#retrieveModal').modal('toggle')
+    $('#reachoutModal').modal('toggle')
 });
-
-
 
 
 </script>
