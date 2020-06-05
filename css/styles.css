@@ -1,7 +1,4 @@
-.jumbotron{
-    height: 300px;
-    background-image: url("../img/jumbotron-2.jpg");
-}
+
 
 
 .row-header{
@@ -25,7 +22,7 @@
     padding: 0px 0px 0px 0px;
     border-bottom: 1px ridge;
     
-    height:720px;
+    height:750px;
 }
 
 .got{
@@ -46,24 +43,103 @@
     
 }
 
-.font-reach{
-    font-size: 175px;
+.font-card{
+    
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        
+        vertical-align: 10px;
+        position: absolute;
+        top: 57%;
+        left: 20%;
+        width: 200px;
+        height: 70px;
+       line-height: 50px;
+        text-align: center;
+        
+        
+        
+    
+}
+.font-cardUn{
+    
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    
+    vertical-align: 10px;
+    position: absolute;
+    top: 57%;
+    left: 20%;
+    width: 350px;
+    height: 70px;
+   line-height: 50px;
+    text-align: center;
+    
+    
+    
+
+}
+
+.font-cardUnable{
+    font-size: 35px;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        
+        vertical-align: 10px;
+        position: absolute;
+        top: 57%;
+        left: 20%;
+        width: 500px;
+        height: 70px;
+       line-height: 35px;
+        text-align: center;
+}
+
+.font-got{
+    font-size: 280px;
+    font-weight: bold;
+    text-align: right;
+    
+    font-family: 'Roboto', sans-serif;
+}
+.font-sec{
+    font-size: 50px;
     font-weight: bold;
     text-align: right;
     
     font-family: 'Roboto', sans-serif;
 }
 
-.font-smile{
-    font-size: 175px;
+.font-reach{
+    font-size: 280px;
+    font-weight: bold;
+    text-align: right;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-reachout{
+    font-size: 180px;
+    font-weight: bold;
+    text-align: right;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-sm{
+    font-size: 80px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     
 }
 
 
+
 .footer{
-    background-color: #D1C4E9;
+       
+    background-color: #000A12;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
 }
@@ -81,15 +157,39 @@
 
 
 .modal-header {
+
     background: #000A12;
     color: gray; }
     .modal-header .close {
       color: floralwhite; }
+
+    
   
   .modal-body {
     background: #000A12; 
     text-align: center;
     height: 500px;}
+
+
+ .modal-retrieveBody {
+    background-image: url("../img/jumbotron-2.jpg");
+    background-size: cover;
+    
+    text-align: center;
+    height: 500px;}
+
+    .modal-bodys  {
+        background-image: url("../img/jumbotron-2.jpg");
+        background-size: cover;
+        
+        text-align: center;
+        height: 250px;}
+
+
+
+        
+
+    
 
 
   
@@ -118,16 +218,29 @@
    
 .btn-default
 {
-background-color: #000A12;
+
+    background-image: url("../img/jumbotron-2.jpg");
+    background-size: cover;
 color:#FFF;
 border-color: #CFCFCF;
 }
+
+
 
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
 background-color: #CFCFCF;
 color:#FFF;
 border-color: #CFCFCF;
 }
+
+select option {
+    background: #000A12; 
+    color: #fff; 
+    box-shadow: inset 20px 20px #000A12;
+  } 
+  
+ 
+
 
 
 
@@ -138,7 +251,7 @@ border-color: #CFCFCF;
     .child-div{
     
     width: 350px;
-    height: 90px;
+    height: 130px;
     
     margin-right: 1%;
     position: absolute;
@@ -146,6 +259,54 @@ border-color: #CFCFCF;
     right: 0em;
     
     }
+
+    .child-divreach{
+        
+    
+            width: 350px;
+            height: 130px;
+            
+            margin-right:38%;
+            position: absolute;
+            bottom:100;
+            right: 0em;
+            
+           
+    }
+
+    .child-reachbutton{
+        
+        width:350px;
+        height: 130px;
+        
+        margin-left:1%;
+        position: absolute;
+        bottom:0;
+        left: 0em;
+    }
+
+    .child-reachout{
+        width: 350px;
+        height: 500px;
+        
+        margin-right:3%;
+        position: absolute;
+        bottom:0;
+        right: 0em;
+        
+    }
+
+    .child-got{
+    
+        width: 1000px;
+        height: 800px;
+        
+        margin-left: 2%;
+        position: absolute;
+        bottom:0;
+        left: 0em;
+        
+        }
 
   
 
@@ -173,13 +334,50 @@ border-color: #CFCFCF;
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
+        color: #000A12;
         font-family: monospace;
         font-size: 10px;
         text-align: left;
         }
         th {
-        background-color: #588c7e;
+        background-color: #CFCFCF;
         color: white;
         }
         tr:nth-child(even) {background-color: #f2f2f2}
+
+
+
+        .box {
+            
+    background-image: url("../img/jumbotron-2.jpg");
+    background-size: cover;
+            width: 1000px;
+            height: 500px;
+            padding: 10px;
+            border-radius: 2%;
+            margin: 0;
+          }
+
+          
+
+            .response-div{
+                display: block;
+                margin-top: 8%;
+                margin-left: auto;
+                margin-right: auto;
+                
+                
+            }
+
+            
+            .roundedCorner
+            {
+              width:1000px;height:500px;
+              
+            background-color: #eed;
+          
+            border-radius:25px;
+            -webkit-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.55);
+            -moz-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.55);  
+            box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.55)
+            }

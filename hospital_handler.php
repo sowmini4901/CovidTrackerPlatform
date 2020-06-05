@@ -44,11 +44,11 @@ if (!empty($category) || !empty($name) || !empty($password) || !empty($portfolio
             $stmt=$conn->prepare($INSERT);
             $stmt->bind_param("ssssis",$category,$name,$password,$portfolio,$contact,$email);
             $stmt->execute();
-            echo "New record inserted successfully";
+            header("Location: http://localhost/covid/thankyou.html");
 
         } 
         else{
-            echo "Someone already registered using this email";
+            header("Location: http://localhost/covid/email.html");
         }
         $stmt->close();
         $conn->close();

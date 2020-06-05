@@ -5,21 +5,21 @@ if(isset($_POST['delete']))
     $host = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbname = "hospital";
+    $dbname = "volunteer";
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
-    $name=$_POST['name'];
+    $password=$_POST['password'];
 
-    $query1 = "delete from register where patientname = '$name' ";
+    $query1 = "delete from register where password = '$password' ";
     $result = mysqli_query($conn,$query1);
     if($result)
     {
-        echo "Data deleted...";
+        header("Location: http://localhost/covid/deleted.html");
     }
     else
     {
-        echo "Data not Deleted...";
+        header("Location: http://localhost/covid/unable.html");
     }
     mysqli_close($conn);
 }
